@@ -1,35 +1,31 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
 
-function App() {
-  const [count, setCount] = useState(0)
+import { useState } from 'react'
+import './App.css'
+import Add from './contents/Add'
+
+
+export default function App() {
+  const [list,setList]=useState([
+    {id:123, text:'공부하기', State:'active'},
+    {id:456, text:'놀기', State:'active'},
+    {id:789, text:'잠자기', State:'active'}
+  ])
+  const handleAdd=(todo)=>setList([...list,todo])
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <section>
+      <ul style={{textAlign:'center',
+       border:'2px solid black',
+       width:'24rem',height:'24rem',
+       backgroundColor:'#4B73E1',color:'white',fontSize:'1.5rem'}}>
+        {list.map((item)=>(
+          <li key={item.id}>{item.text}</li>)
+        )} 
+      </ul>
+      <Add onAdd={handleAdd}/>
+    </section>
   )
 }
 
-export default App
+
+
