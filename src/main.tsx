@@ -1,10 +1,18 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import App from './App.tsx'
-import './index.css'
+import React, { useState } from "react";
+import ReactDOM from "react-dom/client";
+import Header from "./contents/Header.tsx";
+import App from "./App.tsx";
+import "./index.css";
 
-ReactDOM.createRoot(document.getElementById('root')!).render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-)
+const filters = ["all", "active", "completed"];
+const Root = () => {
+  const [filter, setFilter] = useState(filters[0]);
+
+  return (
+    <React.StrictMode>
+      <Header filter={filter} filters={filters} onChange={setFilter} />
+      <App filter={filter} />
+    </React.StrictMode>
+  );
+};
+ReactDOM.createRoot(document.getElementById("root")!).render(<Root />);

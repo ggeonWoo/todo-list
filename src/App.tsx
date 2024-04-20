@@ -3,7 +3,7 @@ import "./App.css";
 import Add from "./contents/Add";
 import Todo from "./contents/Todo";
 
-export default function App() {
+export default function App({filter}) {
   const [list, setList] = useState([
     { id: 123, text: "공부하기", state: "active" },
     { id: 456, text: "놀기", state: "active" },
@@ -15,21 +15,11 @@ export default function App() {
   const handleDelete = (deleted: any) =>
     setList(list.filter((list) => list.id !== deleted.id));
 
+    const flietered= getFiltered(list,filter)
   return (
     <section>
-      <ul
-        style={{
-          textAlign: "center",
-          border: "2px solid black",
-          width: "24rem",
-          height: "24rem",
-          backgroundColor: "#4B73E1",
-          color: "white",
-          fontSize: "1.5rem",
-          overflow: "auto",
-        }}
-      >
-        {list.map((item) => (
+      <ul className="list-none">
+        {flietered.map((item:any) => (
           <Todo
             key={item.id}
             todo={item}
@@ -41,4 +31,10 @@ export default function App() {
       <Add onAdd={handleAdd} />
     </section>
   );
+}
+
+function getFiltered(list:any,filter:any){
+  if(filter==='all'){
+    return list;
+  }return list.filter((list:any)=>list.state===filter)
 }
