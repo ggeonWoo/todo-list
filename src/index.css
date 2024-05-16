@@ -1,10 +1,7 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
 
 
 
-/* :root {
+ :root {
 --color-bg:#fdfffd;
 --color-grey:#aaaaaa;
 --color-text:#22243b;
@@ -14,61 +11,31 @@
 }
 
 
- ul{
-  list-style: none;
-  padding-left: 0;
- }
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
 
 body {
- width: 100vh;
+ margin: 0;
+ width: 208vh;
  height: 100vh;
  display: flex;
  justify-content: center;
-align-items: center;
-
+ align-items: center;
+ background: rgb(2,0,36);
+ background: linear-gradient(90deg, rgba(2,0,36,1) 15%, rgba(53,32,185,0.8856792717086834) 84%);
+ 
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+#root{
+  width: 100%;
+  height: 60%;
+  max-width: 500px;
+  background-color: var(--color-bg);
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
-} */
+ul{
+  list-style: none;
+  padding-left: 0;
+ }

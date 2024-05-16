@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./App.css";
 import Add from "./contents/Add";
 import Todo from "./contents/Todo";
+import './index.css';
 
 export default function App({filter}) {
   const [list, setList] = useState([
@@ -18,7 +19,7 @@ export default function App({filter}) {
     const flietered= getFiltered(list,filter)
   return (
     <section>
-      <ul className="list-none">
+      <ul>
         {flietered.map((item:any) => (
           <Todo
             key={item.id}
@@ -38,3 +39,6 @@ function getFiltered(list:any,filter:any){
     return list;
   }return list.filter((list:any)=>list.state===filter)
 }
+
+
+

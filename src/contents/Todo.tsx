@@ -23,6 +23,3 @@ export default function Todo({ todo, onUpdate, onDelete }:any) {
   );
 }
 
-
-
-
