@@ -1,7 +1,7 @@
 import { FaTrashCan } from "react-icons/fa6";
 
 export default function Todo({ todo, onUpdate, onDelete }:any) {
-  const handleChange=(e:any)=>{
+  const handleChange=(e: React.ChangeEvent<HTMLInputElement>)=>{
     const state=e.target.checked?'completed':'active';
     onUpdate({...todo,state});
   };

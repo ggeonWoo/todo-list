@@ -1,6 +1,13 @@
-import React from "react";
 
-export default function Header({ filters, filter, onChange }) {
+export default function Header({
+  filters,
+  filter,
+  onChange,
+}: {
+  filters: string[];
+  filter: string;
+  onChange: (value: string) => void;
+}) {
   return (
     <header
       style={{
@@ -11,7 +18,7 @@ export default function Header({ filters, filter, onChange }) {
       }}
     >
       <ul style={{ display: "flex" }}>
-        {filters.map((value: any, index: any) => (
+        {filters.map((value, index) => (
           <li key={index}>
             <button
               style={{ margin: "0.4rem", fontSize: "1.8rem" }}
